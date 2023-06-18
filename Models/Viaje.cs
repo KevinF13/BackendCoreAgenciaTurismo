@@ -12,24 +12,27 @@ namespace BackEndCoreAgencia.Models
         public int duracion { get; set; }
         public string descripcion { get; set; }
         public decimal precio { get; set; }
+        public string imagen { get; set; }
 
         public Viaje() { }
 
-        public Viaje(int id, string Nombre, int Duracion, string Descripcion, decimal Precio)
+        public Viaje(int id, string Nombre, int Duracion, string Descripcion, decimal Precio, string Imagen)
         {
             idViaje = id;
             nombre = Nombre;
             duracion = Duracion;
             descripcion = Descripcion;
             precio = Precio;
+            imagen = Imagen;
         }
 
-        public Viaje(string Nombre, int Duracion, string Descripcion, decimal Precio)
+        public Viaje(string Nombre, int Duracion, string Descripcion, decimal Precio, string Imagen)
         {
             nombre = Nombre;
             duracion = Duracion;
             descripcion = Descripcion;
             precio = Precio;
+            imagen = imagen;
         }
     }
 }

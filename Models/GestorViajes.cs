@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 
 namespace BackEndCoreAgencia.Models
 {
@@ -32,8 +33,9 @@ namespace BackEndCoreAgencia.Models
                     int duracion = dr.GetInt32(2);
                     string descripcion = dr.GetString(3).Trim();
                     decimal precio = dr.GetDecimal(4);
+                    string imagen = dr.GetString(5).Trim();
 
-                    Viaje viaje = new Viaje(id, nombre, duracion, descripcion, precio);
+                    Viaje viaje = new Viaje(id, nombre, duracion, descripcion, precio, imagen);
 
                     lista.Add(viaje);
                 }
@@ -62,6 +64,7 @@ namespace BackEndCoreAgencia.Models
                 cmd.Parameters.AddWithValue("@duracion", viaje.duracion);
                 cmd.Parameters.AddWithValue("@descripcion", viaje.descripcion);
                 cmd.Parameters.AddWithValue("@precio", viaje.precio);
+                cmd.Parameters.AddWithValue("@imagen", viaje.imagen);
 
                 try
                 {
@@ -103,6 +106,7 @@ namespace BackEndCoreAgencia.Models
                 cmd.Parameters.AddWithValue("@duracion", viaje.duracion);
                 cmd.Parameters.AddWithValue("@descripcion", viaje.descripcion);
                 cmd.Parameters.AddWithValue("@precio", viaje.precio);
+                cmd.Parameters.AddWithValue("@imagen", viaje.imagen);
 
                 try
                 {
@@ -162,5 +166,8 @@ namespace BackEndCoreAgencia.Models
                 return res;
             }
         }
+
+
+        
     }
 }
