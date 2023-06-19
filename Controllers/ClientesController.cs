@@ -35,7 +35,14 @@ namespace BackEndCoreAgencia.Controllers
 
                     connection.Open();
 
-                    int existingEmailCount = (int)selectCommand.ExecuteScalar();
+                    object result = selectCommand.ExecuteScalar();
+                    int existingEmailCount = 0;
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        existingEmailCount = Convert.ToInt32(result);
+                    }
+
 
                     if (existingEmailCount > 0)
                     {
@@ -59,7 +66,7 @@ namespace BackEndCoreAgencia.Controllers
                     return rowsAffected > 0;
                 }
             }
-        }
+            }
 
 
 
@@ -102,6 +109,8 @@ namespace BackEndCoreAgencia.Controllers
 
             return registeredUsers;
         }
+
+
 
 
         [HttpPost]
