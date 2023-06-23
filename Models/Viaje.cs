@@ -34,5 +34,9 @@ namespace BackEndCoreAgencia.Models
             precio = Precio;
             imagen = imagen;
         }
+        public Viaje(string Nombre)
+        {
+            nombre = Nombre;
+        }
     }
 }

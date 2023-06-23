@@ -30,6 +30,10 @@ namespace BackEndCoreAgencia.Models
                 idPreferencia_Cliente = IdPreferencia_Cliente;
                 nombre = Nombre;
             }
-      
+
+            public Preferencia(String Nombre)
+            {
+                nombre = Nombre;
+            }
     }
 }

@@ -38,7 +38,6 @@ namespace BackEndCoreAgencia.Controllers
                         }
                     }
                 }
-
                 return BadRequest("Usuario o contraseña incorrectos");
             }
             catch (Exception)
@@ -47,4 +46,7 @@ namespace BackEndCoreAgencia.Controllers
             }
         }
     }
+
+
+
 }
